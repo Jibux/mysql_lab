@@ -1,0 +1,5 @@
+[client]
+user=root
+password=lab
+protocol=TCP
+prompt="3306> "

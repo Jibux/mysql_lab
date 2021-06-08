@@ -6,16 +6,16 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./my.cnf:/etc/my.cnf.d/98-my.cnf
-      - ./my3306.cnf:/etc/my.cnf.d/99-my.cnf
+      - ./mysql_server.cnf:/etc/my.cnf.d/98-my.cnf
+      - ./mysql_server_3306.cnf:/etc/my.cnf.d/99-my.cnf
     env_file:
-      - ./mysql.env
+      - ./docker-mysql.env
   mysql3307:
     image: centos/mysql-57-centos7
     ports:
       - 3307:3306
     volumes:
-      - ./my.cnf:/etc/my.cnf.d/98-my.cnf
-      - ./my3307.cnf:/etc/my.cnf.d/99-my.cnf
+      - ./mysql_server.cnf:/etc/my.cnf.d/98-my.cnf
+      - ./mysql_server_3307.cnf:/etc/my.cnf.d/99-my.cnf
     env_file:
-      - ./mysql.env
+      - ./docker-mysql.env

@@ -1,3 +1,5 @@
-[mysqld]
-server-id=2
-
+[client]
+user=root
+password=lab
+protocol=TCP
+prompt="3307> "

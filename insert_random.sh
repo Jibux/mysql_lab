@@ -18,7 +18,7 @@ get_batch()
 while true; do
 	sql=$(get_batch 10)
 	echo "Do '$sql'"
-	./mysql.sh --port=3306 --exec="$sql"
+	./my3306.sh -e "$sql"
 	sleep 1
 done
 

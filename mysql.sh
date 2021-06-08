@@ -22,6 +22,22 @@ mysql_cmd()
 	mysql --defaults-extra-file="$MYSQL_CLIENT_EXTRA_CNF" -P"$PORT" "$DB_NAME" "$@"
 }
 
+slave_status()
+{
+	mysql_cmd -e "SHOW SLAVE STATUS\G"
+}
+
+
+init_server_uuid()
+{
+	SERVER_UUID=$(mysql_cmd -NB -e "select @@server-uuid")
+}
+
+init_master_uuid()
+{
+	MASTER_UUID=$(slave_status | grep Master_UUID | awk '{print $NF}')
+}
+
 DB_NAME="lab"
 MYSQL_CLIENT_EXTRA_CNF="./my$PORT.cnf"
 check_port

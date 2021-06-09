@@ -6,8 +6,8 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - ./mysql_server.cnf:/etc/my.cnf.d/98-my.cnf
-      - ./mysql_server_3306.cnf:/etc/my.cnf.d/99-my.cnf
+      - ./mysql_server.cnf:/etc/my.cnf.d/98-my.cnf:ro
+      - ./mysql_server_3306.cnf:/etc/my.cnf.d/99-my.cnf:ro
     env_file:
       - ./docker-mysql.env
   mysql3307:
@@ -15,7 +15,7 @@ services:
     ports:
       - 3307:3306
     volumes:
-      - ./mysql_server.cnf:/etc/my.cnf.d/98-my.cnf
-      - ./mysql_server_3307.cnf:/etc/my.cnf.d/99-my.cnf
+      - ./mysql_server.cnf:/etc/my.cnf.d/98-my.cnf:ro
+      - ./mysql_server_3307.cnf:/etc/my.cnf.d/99-my.cnf:ro
     env_file:
       - ./docker-mysql.env
